@@ -78,7 +78,7 @@
   - measure: click_thru_rate
     type: number
     value_format: '#.00\%'
-    sql: 100 * ${TABLE}.sum_total_clicks / NULLIF(${TABLE}.sum_receives,0)
+    sql: 100 * SUM(${TABLE}.total_clicks) / NULLIF(SUM(${TABLE}.receives),0)
 
   - measure: sum_unique_clicks
     type: sum
