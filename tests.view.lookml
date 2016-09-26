@@ -68,7 +68,7 @@
     type: number
     sql: ${TABLE}.winning_group_id
 
-  - measure: count_distinct_test_groups
+  - measure: count_distinct_tests
     type: count_distinct
-    drill_fields: [id, name, test_accounts.count, test_group_messages.count, test_groups.count]
+    drill_fields: [id, name, test_accounts.count_distinct_accounts, test_group_messages.count_distinct_group_messages, test_groups.count_distinct_groups]
 
