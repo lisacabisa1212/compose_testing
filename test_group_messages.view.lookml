@@ -69,7 +69,7 @@
   - measure: open_rate
     type: number
     value_format: '#.00\%'
-    sql: 100 * ${TABLE}.sum_opens / NULLIF(${TABLE}.sum_receives,0)
+    sql: 100 * SUM(${TABLE}.opens) / NULLIF(SUM(${TABLE}.receives),0)
 
   - measure: sum_total_clicks
     type: sum
