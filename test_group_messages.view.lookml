@@ -6,103 +6,113 @@
     type: number
     sql: ${TABLE}.id
 
-  - dimension: campaign_id
-    type: number
-    sql: ${TABLE}.campaign_id
-
-  - measure: complains
-    type: number
-    sql: ${TABLE}.complains
-
-  - measure: content_link_clicks
-    type: number
-    sql: ${TABLE}.content_link_clicks
-
-  - measure: conversions
-    type: number
-    sql: ${TABLE}.conversions
-
-  - dimension_group: deleted
-    type: time
-    timeframes: [time, date, week, month]
-    sql: ${TABLE}.deleted_at
-
-  - dimension: description
-    type: string
-    sql: ${TABLE}.description
-
-  - measure: dismisses
-    type: number
-    sql: ${TABLE}.dismisses
-
-  - dimension: group_id
-    type: number
-    sql: ${TABLE}.group_id
-
-  - measure: hard_bounces
-    type: number
-    sql: ${TABLE}.hard_bounces
-
   - dimension_group: inserted
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.inserted_at
-
-  - dimension: name
-    type: string
-    sql: ${TABLE}.name
-
-  - measure: opens
-    type: number
-    sql: ${TABLE}.opens
-
-  - measure: other_cta_clicks
-    type: number
-    sql: ${TABLE}.other_cta_clicks
-
-  - measure: primary_cta_clicks
-    type: number
-    sql: ${TABLE}.primary_cta_clicks
-
-  - measure: receives
-    type: number
-    sql: ${TABLE}.receives
-
-  - measure: sends
-    type: number
-    sql: ${TABLE}.sends
-
-  - measure: soft_bounces
-    type: number
-    sql: ${TABLE}.soft_bounces
-
-  - dimension: test_id
-    type: number
-    # hidden: true
-    sql: ${TABLE}.test_id
-
-  - measure: total_clicks
-    type: number
-    sql: ${TABLE}.total_clicks
-
-  - dimension: type
-    type: string
-    sql: ${TABLE}.type
-
-  - measure: unique_clicks
-    type: number
-    sql: ${TABLE}.unique_clicks
-
-  - measure: unsubscribes
-    type: number
-    sql: ${TABLE}.unsubscribes
 
   - dimension_group: updated
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.updated_at
 
-  - measure: count
-    type: count
+  - dimension_group: deleted
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.deleted_at
+
+  - dimension: test_id
+    type: number
+    # hidden: true
+    sql: ${TABLE}.test_id
+
+  - dimension: group_id
+    type: number
+    sql: ${TABLE}.group_id
+
+  - dimension: name
+    type: string
+    sql: ${TABLE}.name
+
+  - dimension: description
+    type: string
+    sql: ${TABLE}.description
+
+  - dimension: type
+    type: string
+    sql: ${TABLE}.type
+
+  - dimension: campaign_id
+    type: number
+    sql: ${TABLE}.campaign_id
+
+  - measure: sum_sends
+    type: sum
+    sql: ${TABLE}.sends
+
+  - measure: sum_receives
+    type: sum
+    sql: ${TABLE}.receives
+
+  - measure: sum_hard_bounces
+    type: sum
+    sql: ${TABLE}.hard_bounces
+
+  - measure: sum_soft_bounces
+    type: sum
+    sql: ${TABLE}.soft_bounces
+
+  - measure: sum_opens
+    type: sum
+    sql: ${TABLE}.opens
+
+  - measure: open_rate
+    type: number
+    value_format: '#.00\%'
+    sql: 100 * ${TABLE}.opens / NULLIF(${TABLE}.receives,0)
+
+  - measure: sum_total_clicks
+    type: sum
+    sql: ${TABLE}.total_clicks
+
+  - measure: click_thru_rate
+    type: number
+    value_format: '#.00\%'
+    sql: 100 * ${TABLE}.total_clicks / NULLIF(${TABLE}.receives,0)
+
+  - measure: sum_unique_clicks
+    type: sum
+    sql: ${TABLE}.unique_clicks
+
+  - measure: sum_primary_cta_clicks
+    type: sum
+    sql: ${TABLE}.primary_cta_clicks
+
+  - measure: sum_other_cta_clicks
+    type: sum
+    sql: ${TABLE}.other_cta_clicks
+
+  - measure: sum_content_link_clicks
+    type: sum
+    sql: ${TABLE}.content_link_clicks
+
+  - measure: sum_dismisses
+    type: sum
+    sql: ${TABLE}.dismisses
+
+  - measure: sum_conversions
+    type: sum
+    sql: ${TABLE}.conversions
+
+  - measure: sum_unsubscribes
+    type: sum
+    sql: ${TABLE}.unsubscribes
+
+  - measure: sum_complains
+    type: sum
+    sql: ${TABLE}.complains
+
+  - measure: count_distinct_group_messages
+    type: count_distinct
     drill_fields: [id, name, tests.id, tests.name]
 
