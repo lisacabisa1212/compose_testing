@@ -42,12 +42,12 @@
     type: sum
     sql: ${TABLE}.coupon_redeems
 
-  - measure: count_distinct_accounts_with_primary_services_created_in_test
-    type: count_distinct
+  - measure: sum_accounts_with_primary_services_created_in_test
+    type: sum
     sql: ${TABLE}.accounts_with_primary_services_created_in_test
 
-  - measure: count_distinct_accounts_with_other_services_created_in_test
-    type: count_distinct
+  - measure: sum_accounts_with_other_services_created_in_test
+    type: sum
     sql: ${TABLE}.accounts_with_other_services_created_in_test
 
   - measure: sum_primary_services_created_in_test
