@@ -68,6 +68,10 @@
     type: number
     sql: ${TABLE}.winning_group_id
 
+  - dimension: confidence
+    type: number
+    sql: ${TABLE}.confidence
+
   - measure: count_distinct_tests
     type: count_distinct
     sql: ${TABLE}.id
