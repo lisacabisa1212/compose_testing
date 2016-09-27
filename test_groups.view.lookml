@@ -38,6 +38,14 @@
     type: number
     sql: ${TABLE}.amount_in_group
 
+  - dimension: winning_group
+    type: yesno
+    sql: ${TABLE}.winning_group
+
+  - dimension: confidence
+    type: number
+    sql: ${TABLE}.confidence
+
   - measure: sum_coupon_redeems
     type: sum
     sql: ${TABLE}.coupon_redeems
@@ -61,14 +69,6 @@
   - measure: sum_conversions
     type: sum
     sql: ${TABLE}.conversions
-
-  - dimension: winning_group
-    type: yesno
-    sql: ${TABLE}.winning_group
-
-  - measure: confidence
-    type: number
-    sql: ${TABLE}.confidence
 
   - measure: count_distinct_groups
     type: count_distinct
