@@ -72,5 +72,6 @@
 
   - measure: count_distinct_groups
     type: count_distinct
+    sql: ${TABLE}.id
     drill_fields: [id, name, tests.id, tests.name]
 

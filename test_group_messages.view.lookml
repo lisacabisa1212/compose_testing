@@ -114,5 +114,6 @@
 
   - measure: count_distinct_group_messages
     type: count_distinct
+    sql: ${TABLE}.id
     drill_fields: [id, name, tests.id, tests.name]
 
