@@ -28,6 +28,10 @@
       type: left_outer 
       sql_on: ${test_group_messages.group_id} = ${test_groups.id}
       relationship: many_to_one
+    - join: test_accounts
+      type: left_outer 
+      sql_on: ${test_accounts.group_id} = ${test_groups.id}
+      relationship: many_to_one
 
 - explore: test_groups
   joins:
