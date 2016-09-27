@@ -13,6 +13,10 @@
       type: left_outer 
       sql_on: ${test_accounts.group_id} = ${test_groups.id}
       relationship: many_to_one
+    - join: test_group_messages
+      type: left_outer 
+      sql_on: ${test_group_messages.group_id} = ${test_groups.id}
+      relationship: many_to_many
 
 - explore: test_group_messages
   joins:
@@ -49,4 +53,8 @@
     - join: test_groups
       type: left_outer 
       sql_on: ${tests.id} = ${test_groups.test_id}
+      relationship: one_to_many
+    - join: test_group_messages
+      type: left_outer 
+      sql_on: ${test_group_messages.group_id} = ${test_groups.id}
       relationship: one_to_many
