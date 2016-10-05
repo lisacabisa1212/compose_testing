@@ -74,11 +74,7 @@
 
   - dimension: max_start
     type: yesno
-    sql: |
-      CASE WHEN ${TABLE}.start_at = (SELECT MAX(${TABLE}.start_at) FROM tests)
-        THEN 1
-        ELSE 0
-      END
+    sql: ${TABLE}.start_at = (SELECT MAX(${TABLE}.start_at) FROM tests)
 
   - measure: count_distinct_tests
     type: count_distinct
