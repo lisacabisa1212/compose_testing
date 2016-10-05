@@ -33,9 +33,9 @@
     type: string
     sql: ${TABLE}.link
 
-  - dimension: amount_in_test
+  - dimension: test_segment
     type: number
-    sql: ${TABLE}.amount_in_test
+    sql: ${TABLE}.test_segment
 
   - dimension: goal
     type: string
