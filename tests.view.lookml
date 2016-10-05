@@ -34,7 +34,7 @@
     sql: ${TABLE}.link
 
   - dimension: test_segment
-    type: number
+    type: string
     sql: ${TABLE}.test_segment
 
   - dimension: goal
