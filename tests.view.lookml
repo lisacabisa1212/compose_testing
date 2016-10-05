@@ -72,6 +72,11 @@
     type: number
     sql: ${TABLE}.confidence
 
+  - dimension: max_start
+    type: time
+    timeframes: [time, date, week, month]
+    sql: MAX(${TABLE}.start_at)
+
   - measure: count_distinct_tests
     type: count_distinct
     sql: ${TABLE}.id
