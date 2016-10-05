@@ -75,7 +75,7 @@
   - dimension: max_start
     type: yesno
     sql: |
-      CASE WHEN ${TABLE}.start_at = (SELECT MAX(${TABLE}.start_at))
+      CASE WHEN ${TABLE}.start_at = (SELECT MAX(${TABLE}.start_at) FROM tests)
         THEN 1
         ELSE 0
       END
