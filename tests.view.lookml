@@ -73,9 +73,12 @@
     sql: ${TABLE}.confidence
 
   - dimension: max_start
-    type: time
-    timeframes: [time, date, week, month]
-    sql: MAX(${TABLE}.start_at)
+    type: yesno
+    sql: |
+      CASE WHEN ${TABLE}.start_at = (SELECT MAX(${TABLE}.start_at))
+        THEN 1
+        ELSE 0
+      END
 
   - measure: count_distinct_tests
     type: count_distinct
