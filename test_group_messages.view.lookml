@@ -46,10 +46,6 @@
     type: number
     sql: ${TABLE}.campaign_id
 
-  - measure: sum_sends
-    type: sum
-    sql: ${TABLE}.sends
-
   - measure: sum_receives
     type: sum
     sql: ${TABLE}.receives
@@ -116,4 +112,8 @@
     type: count_distinct
     sql: ${TABLE}.id
     drill_fields: [id, name, tests.id, tests.name]
+    
+  - measure: sum_sends
+    type: sum
+    sql: ${TABLE}.receives + ${TABLE}.hard_bounces
 
