@@ -113,7 +113,5 @@
     sql: ${TABLE}.id
     drill_fields: [id, name, tests.id, tests.name]
     
-  - measure: sum_sends
-    type: sum
-    sql: SUM(${TABLE}.receives) + SUM(${TABLE}.hard_bounces)
+
 
