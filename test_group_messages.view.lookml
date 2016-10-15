@@ -115,5 +115,5 @@
     
   - measure: sum_sends
     type: sum
-    sql: ${TABLE}.receives + ${TABLE}.hard_bounces
+    sql: SUM(${TABLE}.receives) + SUM(${TABLE}.hard_bounces)
 
