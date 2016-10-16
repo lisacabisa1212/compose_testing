@@ -59,6 +59,11 @@
     type: sum
     sql: ${TABLE}.accounts_with_primary_services_created_in_test
 
+  - measure: percent_of_accounts_with_prinary_services
+    type: number
+    value_format: '#.00\%'
+    sql: ${test_groups.sum_accounts_with_primary_services_created_in_test} / ${test_groups.amount_in_group}
+
   - measure: sum_accounts_with_other_services_created_in_test
     type: sum
     sql: ${TABLE}.accounts_with_other_services_created_in_test
