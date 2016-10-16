@@ -53,7 +53,7 @@
   - measure: coupon_redeem_rate
     type: number
     value_format: '#.00\%'
-    sql: 100 * SUM(${TABLE}.sum_coupon_redeems) / NULLIF(SUM(${TABLE}.receives),0)
+    sql: 100 * SUM(${TABLE}.coupon_redeems) / NULLIF(SUM(${TABLE}.receives),0)
 
   - measure: sum_accounts_with_primary_services_created_in_test
     type: sum
@@ -78,7 +78,7 @@
   - measure: conversion_rate
     type: number
     value_format: '#.00\%'
-    sql: 100 * SUM(${TABLE}.sum_conversions) / if(${test_group_messages.sum_receives} = 0,${test_groups.amount_in_group},${test_group_messages.sum_receives})
+    sql: 100 * SUM(${TABLE}.conversions) / if(${test_group_messages.sum_receives} = 0,${test_groups.amount_in_group},${test_group_messages.sum_receives})
 
   - measure: count_distinct_groups
     type: count_distinct
