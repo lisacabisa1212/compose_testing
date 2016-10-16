@@ -78,7 +78,7 @@
   - measure: conversion_rate
     type: number
     value_format: '#.00\%'
-    sql: 100 * SUM(${TABLE}.conversions) / if(${test_group_messages.sum_receives} = 0,${test_groups.amount_in_group},${test_group_messages.sum_receives})
+    sql: 100 * SUM(${TABLE}.conversions) / CASE WHEN ${test_group_messages.sum_receives} = 0 THEN ${test_groups.amount_in_group} ELSE ${test_group_messages.sum_receives} END
 
   - measure: count_distinct_groups
     type: count_distinct
