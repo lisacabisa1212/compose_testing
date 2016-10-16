@@ -53,7 +53,7 @@
   - measure: coupon_redeem_rate
     type: number
     value_format: '#.00\%'
-    sql: 100 * SUM(${TABLE}.coupon_redeems) / NULLIF(SUM(${TABLE}.receives),0)
+    sql: 100 * SUM(${TABLE}.coupon_redeems) / NULLIF(SUM(${test_group_messages.sum_receives}),0)
 
   - measure: sum_accounts_with_primary_services_created_in_test
     type: sum
