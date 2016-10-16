@@ -4,6 +4,7 @@
 - include: "*.dashboard.lookml"  # include all the dashboards
 
 - explore: test_accounts
+  sql_always_where: ${test_accounts.deleted_date} is null
   joins:
     - join: tests
       type: left_outer 
@@ -19,6 +20,7 @@
       relationship: many_to_many
 
 - explore: test_group_messages
+  sql_always_where: ${test_group_messages.deleted_date} is null
   joins:
     - join: tests
       type: left_outer 
@@ -34,6 +36,7 @@
       relationship: many_to_one
 
 - explore: test_groups
+  sql_always_where: ${test_groups.deleted_date} is null
   joins:
     - join: tests
       type: left_outer 
@@ -49,6 +52,7 @@
       relationship: many_to_one
 
 - explore: tests
+  sql_always_where: ${tests.deleted_date} is null
   joins:
     - join: test_accounts
       type: left_outer 
