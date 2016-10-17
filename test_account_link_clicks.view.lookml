@@ -43,7 +43,7 @@
     type: string
     sql: ${TABLE}.link_url
 
-  - dimension: total_clicks
+  - measure: total_clicks
     type: number
     sql: ${TABLE}.total_clicks
 
