@@ -43,8 +43,8 @@
     type: string
     sql: ${TABLE}.link_url
 
-  - measure: total_clicks
-    type: number
+  - measure: sum_total_clicks
+    type: sum
     sql: ${TABLE}.total_clicks
 
   - measure: count_distinct_with_clicks
