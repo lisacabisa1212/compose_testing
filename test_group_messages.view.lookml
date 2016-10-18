@@ -80,13 +80,13 @@
     type: sum
     sql: ${TABLE}.unique_clicks
 
-  - measure: sum_primary_cta_clicks
+  - measure: sum_signup_link_clicks
     type: sum
-    sql: ${TABLE}.primary_cta_clicks
+    sql: ${TABLE}.signup_link_clicks
 
-  - measure: sum_other_cta_clicks
+  - measure: sum_app_link_clicks
     type: sum
-    sql: ${TABLE}.other_cta_clicks
+    sql: ${TABLE}.app_link_clicks
 
   - measure: sum_content_link_clicks
     type: sum
