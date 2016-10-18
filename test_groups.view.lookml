@@ -62,7 +62,7 @@
   - measure: percent_of_accounts_with_primary_services
     type: number
     value_format: '#.00\%'
-    sql: ${test_groups.sum_accounts_with_primary_services_created_in_test} / SUM(${test_groups.amount_in_group})
+    sql: 100 * ${test_groups.sum_accounts_with_primary_services_created_in_test} / SUM(${test_groups.amount_in_group})
 
   - measure: sum_accounts_with_other_services_created_in_test
     type: sum
@@ -71,7 +71,7 @@
   - measure: percent_of_accounts_with_other_services
     type: number
     value_format: '#.00\%'
-    sql: ${test_groups.sum_accounts_with_other_services_created_in_test} / SUM(${test_groups.amount_in_group})
+    sql: 100 * ${test_groups.sum_accounts_with_other_services_created_in_test} / SUM(${test_groups.amount_in_group})
 
   - measure: sum_primary_services_created_in_test
     type: sum
