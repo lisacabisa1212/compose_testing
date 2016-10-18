@@ -88,9 +88,25 @@
     type: sum
     sql: ${TABLE}.app_link_clicks
 
+  - measure: sum_product_page_link_clicks
+    type: sum
+    sql: ${TABLE}.product_page_link_clicks
+
+  - measure: sum_enterprise_link_clicks
+    type: sum
+    sql: ${TABLE}.enterprise_link_clicks
+
   - measure: sum_content_link_clicks
     type: sum
     sql: ${TABLE}.content_link_clicks
+
+  - measure: sum_webinars_link_clicks
+    type: sum
+    sql: ${TABLE}.webinars_link_clicks
+
+  - measure: sum_social_link_clicks
+    type: sum
+    sql: ${TABLE}.social_link_clicks
 
   - measure: sum_dismisses
     type: sum
