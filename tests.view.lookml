@@ -69,7 +69,7 @@
     sql: ${TABLE}.winning_group_id
 
   - dimension: confidence
-    type: number
+    type: string
     sql: ${TABLE}.confidence
 
   - dimension: max_start
