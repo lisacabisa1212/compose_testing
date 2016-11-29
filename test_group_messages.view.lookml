@@ -108,6 +108,10 @@
     type: sum
     sql: ${TABLE}.social_link_clicks
 
+  - measure: sum_unsubscribe_link_clicks
+    type: sum
+    sql: ${TABLE}.unsubscribe_link_clicks
+
   - measure: sum_dismisses
     type: sum
     sql: ${TABLE}.dismisses
